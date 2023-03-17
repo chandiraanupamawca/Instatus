@@ -19,22 +19,7 @@ app.get('/', (req, res) => {
 
 const updateComponents = async () => {
 	try {
-		// create a new date object
-		let now = new Date();
-
-		// get the UTC time
-		let utcTime = now.getTime();
-
-		// calculate the time zone offset for +05.30 Colombo time
-		let colomboOffset = 5.5 * 60 * 60 * 1000;
-
-		// create a new date object with the Colombo time
-		let colomboTime = new Date(utcTime + colomboOffset);
-
-		// format the date string
-		let dateString = colomboTime.toISOString().replace(/T/, ' ').replace(/\..+/, '');
-		
-		console.log(dateString + ' Fetching monitor details from uptimerobot.com...');
+		console.log('Fetching monitor details from uptimerobot.com...');
 		
 		// Step 1: Get the monitor details from uptimerobot.com
 		const monitorList = await axios.post('https://api.uptimerobot.com/v2/getMonitors', {

@@ -7,6 +7,7 @@ require('dotenv').config(); // Load environment variables from .env file
 const uptimerobotApiKey = process.env.UPTIMEROBOT_API_KEY;
 const instatusApiKey = process.env.INSTATUS_API_KEY;
 const instatusPageId = process.env.INSTATUS_PAGE_ID;
+const timeinterval = process.env.TIME_INTERVAL;
 
 const monitorMap = JSON.parse(process.env.MONITOR_MAP);
 
@@ -77,8 +78,8 @@ const updateComponents = async () => {
 	}
 };
 
-// Call the updateComponents function every 10 minutes
-setInterval(updateComponents, 600000);
+// Call the updateComponents function in timeinterval
+setInterval(updateComponents, timeinterval);
 
 // Start the server on port 3000
 app.listen(3000, () => {

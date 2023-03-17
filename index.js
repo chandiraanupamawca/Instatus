@@ -78,7 +78,7 @@ const updateComponents = async () => {
 };
 
 // Call the updateComponents function every 10 minutes
-setInterval(updateComponents, 60000);
+setInterval(updateComponents, 600000);
 
 // Start the server on port 3000
 app.listen(3000, () => {
